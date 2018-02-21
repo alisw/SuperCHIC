@@ -1,11 +1,11 @@
-# 
+#
 # Superchic 2 Makefile routine
 #
 
 # LHAPDF flags
 LIBFLAG = LHAPDF
 # Replace with location of LHAPDF on your system
-LHAPDFLIB = /usr/local/Cellar/lhapdf/6.1.5/lib
+LHAPDFLIB = ${LHAPDF_ROOT}/lib
 
 # PDF input: Set to LHAPDF or USER
 PDFINPUT     = 	LHAPDF
@@ -24,9 +24,9 @@ INCPATH = $(SOURCEDIR)/inc
 
 #####################
 
-FFLAGS 	= -fno-automatic -fno-f2c -O2 -g  -I$(INCPATH)	
+FFLAGS 	= -fno-automatic -fno-f2c -O2 -g  -I$(INCPATH)
 
-OUTPUT_OPTION = -o $(HOME)/obj/$@
+#OUTPUT_OPTION = -o $(HOME)/obj/$@
 
 DIRS	 =	$(SOURCEDIR)/int:\
 		$(SOURCEDIR)/main:\
@@ -46,167 +46,167 @@ DIRS	 =	$(SOURCEDIR)/int:\
 #############
 
 Mesf = \
-calcmes.o \
-mesint.o \
-wfinit.o \
-wfoctet.o \
-wfsinglet.o \
+obj/calcmes.o \
+obj/mesint.o \
+obj/wfinit.o \
+obj/wfoctet.o \
+obj/wfsinglet.o \
 
 PDFsfLHA = \
-alphas.o \
-inpdf.o \
+obj/alphas.o \
+obj/inpdf.o \
 
 PDFsfUSER = \
-alphasuser.o \
-inpdfuser.o \
+obj/alphasuser.o \
+obj/inpdfuser.o \
 
 
 Intf = \
-ran.o  \
-vegas.o \
+obj/ran.o  \
+obj/vegas.o \
 
 Phasef = \
-2body.o \
-2bodyw.o \
-2jetps.o \
-2jetpsm.o \
-3jetps.o \
-boost.o \
-chic0decay3.o \
-chic1decay3.o \
-chic1decay2s.o \
-chic1decay2f.o \
-chic2decay3.o \
-chic2decay2s.o \
-chic2decay2f.o \
-jpsidecayphot.o \
-genpol1.o \
-genpol1rf.o \
-genpol2.o \
-rambo.o \
-6body.o \
-6bodyinit.o \
-4body.o \
-4bodyinit.o \
-3body.o \
-3bodyinit.o \
-2bodyinit.o \
-wwcorr.o \
-jpsidecay.o \
-rhodecay.o \
-chidecay.o \
+obj/2body.o \
+obj/2bodyw.o \
+obj/2jetps.o \
+obj/2jetpsm.o \
+obj/3jetps.o \
+obj/boost.o \
+obj/chic0decay3.o \
+obj/chic1decay3.o \
+obj/chic1decay2s.o \
+obj/chic1decay2f.o \
+obj/chic2decay3.o \
+obj/chic2decay2s.o \
+obj/chic2decay2f.o \
+obj/jpsidecayphot.o \
+obj/genpol1.o \
+obj/genpol1rf.o \
+obj/genpol2.o \
+obj/rambo.o \
+obj/6body.o \
+obj/6bodyinit.o \
+obj/4body.o \
+obj/4bodyinit.o \
+obj/3body.o \
+obj/3bodyinit.o \
+obj/2bodyinit.o \
+obj/wwcorr.o \
+obj/jpsidecay.o \
+obj/rhodecay.o \
+obj/chidecay.o \
 
 Subampsf = \
-chi0.o \
-chi1.o \
-chi2.o \
-etaq.o \
-higgs.o \
-higgsinit.o \
-pipi.o \
-qqjets.o \
-diphoton.o \
-etaeta.o \
-etapetap.o \
-etaetap.o \
-eta.o \
-gggjets.o \
-pipixy.o \
-rhorho.o \
-djpsi.o \
-djpsip.o \
-djpsipp.o \
-ggjets.o \
-qqgjets.o \
-rhorhoxy.o \
-wwpol.o \
-llpol.o \
-mhv.o \
-lightlightpol.o \
-higgsgam.o \
-higgsgaminit.o \
+obj/chi0.o \
+obj/chi1.o \
+obj/chi2.o \
+obj/etaq.o \
+obj/higgs.o \
+obj/higgsinit.o \
+obj/pipi.o \
+obj/qqjets.o \
+obj/diphoton.o \
+obj/etaeta.o \
+obj/etapetap.o \
+obj/etaetap.o \
+obj/eta.o \
+obj/gggjets.o \
+obj/pipixy.o \
+obj/rhorho.o \
+obj/djpsi.o \
+obj/djpsip.o \
+obj/djpsipp.o \
+obj/ggjets.o \
+obj/qqgjets.o \
+obj/rhorhoxy.o \
+obj/wwpol.o \
+obj/llpol.o \
+obj/mhv.o \
+obj/lightlightpol.o \
+obj/higgsgam.o \
+obj/higgsgaminit.o \
 
 Survf = \
-initparsr.o \
-formfac.o \
-formfacphot.o \
-formfacgam.o \
-seik.o \
-seikphot.o\
-seikgam.o \
-screeningint.o \
-readscreen.o \
-formfacgamel.o \
+obj/initparsr.o \
+obj/formfac.o \
+obj/formfacphot.o \
+obj/formfacgam.o \
+obj/seik.o \
+obj/seikphot.o\
+obj/seikgam.o \
+obj/screeningint.o \
+obj/readscreen.o \
+obj/formfacgamel.o \
 
 Userf = \
-cuts.o \
-histo.o \
+obj/cuts.o \
+obj/histo.o \
 
 Mainf = \
-bare.o \
-header.o \
-main.o \
-process.o \
-superchic.o \
-wtgen.o \
+obj/bare.o \
+obj/header.o \
+obj/main.o \
+obj/process.o \
+obj/superchic.o \
+obj/wtgen.o \
 
 sPDFsf = \
-calchg.o \
-hpdfint.o \
-calcsud.o \
-sudint.o \
-sPDF.o \
+obj/calchg.o \
+obj/hpdfint.o \
+obj/calcsud.o \
+obj/sudint.o \
+obj/sPDF.o \
 
 Unwf = \
-unweight.o \
-unwprint.o \
-headerlhe.o \
+obj/unweight.o \
+obj/unwprint.o \
+obj/headerlhe.o \
 
 Varf = \
-mu.o \
-nf.o \
-string.o \
-varfuncs.o \
+obj/mu.o \
+obj/nf.o \
+obj/string.o \
+obj/varfuncs.o \
 
 InitfLHA = \
-alphas.o \
-init.o \
-initsud.o \
-nf.o \
-string.o \
-hg.o \
-inithg.o \
-initpars.o \
-calcop.o \
-calcscreen.o \
-opacityint.o \
-screeningint.o \
-screening.o \
-opacity.o \
-PDF.o \
-PDFlha.o \
-Sudakov.o \
-inpdf.o \
+obj/alphas.o \
+obj/init.o \
+obj/initsud.o \
+obj/nf.o \
+obj/string.o \
+obj/hg.o \
+obj/inithg.o \
+obj/initpars.o \
+obj/calcop.o \
+obj/calcscreen.o \
+obj/opacityint.o \
+obj/screeningint.o \
+obj/screening.o \
+obj/opacity.o \
+obj/PDF.o \
+obj/PDFlha.o \
+obj/Sudakov.o \
+obj/inpdf.o \
 
 InitfUSER = \
-alphasuser.o \
-init.o \
-initsud.o \
-nf.o \
-string.o \
-hg.o \
-inithg.o \
-initpars.o \
-calcop.o \
-calcscreen.o \
-opacityint.o \
-screeningint.o \
-screening.o \
-opacity.o \
-PDF.o \
-PDFuser.o \
-Sudakov.o \
-inpdfuser.o \
+obj/alphasuser.o \
+obj/init.o \
+obj/initsud.o \
+obj/nf.o \
+obj/string.o \
+obj/hg.o \
+obj/inithg.o \
+obj/initpars.o \
+obj/calcop.o \
+obj/calcscreen.o \
+obj/opacityint.o \
+obj/screeningint.o \
+obj/screening.o \
+obj/opacity.o \
+obj/PDF.o \
+obj/PDFuser.o \
+obj/Sudakov.o \
+obj/inpdfuser.o \
 
 
 iCODELHA = $(InitfLHA) \
@@ -227,26 +227,26 @@ ifeq ($(PDFINPUT),LHAPDF)
 ifeq ($(LHOPT),1)
 init:	$(iCODELHA)
 	$(FC) $(FFLAGS) -Wl,-R$(LHAPDFLIB) -L$(LHAPDFLIB) -l$(LIBFLAG) -o $@ \
-	$(patsubst %,obj/%,$(iCODELHA))  -l$(LIBFLAG) 
-	mv init bin/init
+	$(iCODELHA)  -l$(LIBFLAG)
+	mv init bin/superchic_init
 	@echo '    ----> Init compiled OK <----'
 
-superchic:	$(sCODELHA)
+superchic: $(sCODELHA)
 	$(FC) $(FFLAGS) -Wl,-R$(LHAPDFLIB) -L$(LHAPDFLIB) -o $@ \
-	$(patsubst %,obj/%,$(sCODELHA)) -l$(LIBFLAG)
+	$(sCODELHA) -l$(LIBFLAG)
 	mv superchic bin/superchic
 	@echo '    ----> Superchicv2.04 compiled OK <----'
 endif
 ifeq ($(LHOPT),2)
 init:	$(iCODELHA)
 	$(FC) $(FFLAGS) -L$(LHAPDFLIB) -l$(LIBFLAG) -o $@ \
-	$(patsubst %,obj/%,$(iCODELHA))  -l$(LIBFLAG) 
-	mv init bin/init
+	$(iCODELHA)  -l$(LIBFLAG)
+	mv init bin/superchic_init
 	@echo '    ----> Init compiled OK <----'
 
-superchic:	$(sCODELHA)
+superchic: $(sCODELHA)
 	$(FC) $(FFLAGS) -L$(LHAPDFLIB) -o $@ \
-	$(patsubst %,obj/%,$(sCODELHA)) -l$(LIBFLAG)
+	$(sCODELHA) -l$(LIBFLAG)
 	mv superchic bin/superchic
 	@echo '    ----> Superchicv2.04 compiled OK <----'
 endif
@@ -255,16 +255,20 @@ endif
 ifeq ($(PDFINPUT),USER)
 init:	$(iCODEUSER)
 	$(FC) $(FFLAGS)  -o $@ \
-	$(patsubst %,obj/%,$(iCODEUSER))
-	mv init bin/init
+	$(iCODEUSER)
+	mv init bin/superchic_init
 	@echo '    ----> Init compiled OK <----'
 
 superchic:	$(sCODEUSER)
 	$(FC) $(FFLAGS)  -o $@ \
-	$(patsubst %,obj/%,$(sCODEUSER)) 
+	$(sCODEUSER)
 	mv superchic bin/superchic
 	@echo '    ----> Superchicv2.04 compiled OK <----'
 endif
 
-clean: 	
+.PHONY: install
+install: bin/superchic_init bin/superchic
+	install bin/superchic_init bin/superchic ${INSTALLROOT}/bin
+
+clean:
 	-rm -f $(HOME)/obj/*.o
